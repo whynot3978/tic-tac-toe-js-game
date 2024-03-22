@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset-styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>TIC TAC TOE</title>
+</head>
+<body>
+    <!-- Задний фон -->
+    <div id="background"></div>
+
+    <!-- Фоновая анимация -->
+    <div id="x-figure">
+        <img src="images/x-figure.png" alt="">
+    </div>
+
+    <div id="o-figure">
+        <img src="images/o-figure.png" alt="">
+    </div>
+
+    <!-- Игровое поле -->
+    <div id="game-board" class="hidden">
+        <!-- Клетки игрового поля -->
+        <div class="cell" id="cell-1"></div>
+        <div class="cell" id="cell-2"></div>
+        <div class="cell" id="cell-3"></div>
+        <div class="cell" id="cell-4"></div>
+        <div class="cell" id="cell-5"></div>
+        <div class="cell" id="cell-6"></div>
+        <div class="cell" id="cell-7"></div>
+        <div class="cell" id="cell-8"></div>
+        <div class="cell" id="cell-9"></div>
+    </div>
+
+    <button id="restart-button">Начать заново</button> <!-- Кнопка для перезапуска игры -->
+
+    <div id="settings-button" class="hidden">Открыть настройки</div>
+
+    <input type="checkbox" id="sound-checkbox" checked>
+    Звук
+
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js" integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

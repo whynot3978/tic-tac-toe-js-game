@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(111, 1, 213, 0.1);
+    z-index: -1;
+    overflow: hidden;                      /* Ограничиваем видимую область до размера окна браузера */
+    background-color: transparent;         /* Устанавливаем прозрачный фон */
+    pointer-events: none;                  /* Отключаем события мыши для фона */
+}
+
+.hidden {
+    display: none;
+}
+
+#figure-selection {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;                         /* Выбор фигуры будет позиционироваться выше всех элементов */
+    text-align: center;
+}
+
+.figure-option {
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.figure-option img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border-color 0.3s ease;
+}
+
+.figure-option img:hover {
+    border-color: #4caf50;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+    margin: 20px auto;
+    border: 5px solid rgba(0, 81, 255, 0.25);
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    width: 327px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 81, 255, 0.25);
+}
+
+.cell.grey {
+    background-color: #f0f0f0;
+}
+
+.cell:hover {
+    background-color: #788899;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#settings-menu {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cell {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+#x-figure img, #o-figure img {
+    display: none;
+}
