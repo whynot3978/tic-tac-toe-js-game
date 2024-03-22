@@ -52,9 +52,9 @@ let cells = ['', '', '', '', '', '', '', '', '']; //Клетки поля
 let gameEnd = false;                              //Конец игры
 
 const sound = new Audio();
-const placeSound = new Audio('sounds/place_sound.mp3');
-const winSound = new Audio('sounds/win_sound.mp3');
-const drawSound = new Audio('sounds/draw_sound.mp3');
+const placeSound = new Audio('place_sound.mp3');
+const winSound = new Audio('win_sound.mp3');
+const drawSound = new Audio('draw_sound.mp3');
 
 const settingsButton = document.getElementById('settings-button');
 const settingsMenu = document.getElementById('settings-menu');
@@ -93,7 +93,7 @@ const animateBackground = () => {
     if (currentPlayer === 'X') {
         for (let i = 0; i < 50; i++) {
             const clone = document.createElement('img');
-            clone.src = 'images/o.png';
+            clone.src = 'o.png';
             clone.style.position = 'absolute';
             clone.style.left = (Math.random() * window.innerWidth) + 'px';
             clone.style.top = (Math.random() * window.innerHeight) + 'px';
@@ -103,7 +103,7 @@ const animateBackground = () => {
     else if (currentPlayer === 'O') {
         for (let i = 0; i < 50; i++) {
             const clone = document.createElement('img');
-            clone.src = 'images/x.png';
+            clone.src = 'x.png';
             clone.style.position = 'absolute';
             clone.style.left = (Math.random() * window.innerWidth) + 'px';
             clone.style.top = (Math.random() * window.innerHeight) + 'px';
@@ -215,7 +215,7 @@ const renderBoard = () => {
 
     cellsElement.forEach((cell, index) => {
         const imgElement = document.createElement('img');
-        imgElement.src = (cells[index] === 'X') ? 'images/x.png' : (cells[index] === 'O' ? 'images/o.png' : '');
+        imgElement.src = (cells[index] === 'X') ? 'x.png' : (cells[index] === 'O' ? 'o.png' : '');
         imgElement.alt = cells[index];
         cell.innerHTML = '';
         cell.appendChild(imgElement);
